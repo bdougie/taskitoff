@@ -13,4 +13,8 @@
 
 ActiveRecord::Schema.define(:version => 20140116102302) do
 
+  create_table "todos", :force => true do |t|
+    t.string "description"
+  end
+
 end

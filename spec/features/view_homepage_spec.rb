@@ -5,7 +5,7 @@ feature 'View the homepage' do
 		visit root_path
 	end	
 
-	scenario'user sees a welcome message' do
+	scenario 'user sees a welcome message' do
 		visit root_path
 		expect(page).to have_content 'Welcome to Taskitoff'
 	end

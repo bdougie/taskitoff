@@ -1,7 +1,7 @@
 class CreateTodo < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+  def change
+  	create_table :todos do |t|
+  		t.string :description
+  	end
   end
 end
