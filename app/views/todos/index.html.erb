@@ -1,0 +1,4 @@
+<h1>Todos#index</h1>
+<% @todos.each do |todo| %>
+  <p><%= link_to todo.title, todo %></p>
+<% end %>
