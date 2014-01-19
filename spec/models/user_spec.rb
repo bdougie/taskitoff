@@ -5,7 +5,7 @@ describe User do
 		@user = Factory.build(:user)
 	end
 
-	it "should creat euser with valid attributes"
+	it "should create user with valid attributes"
 		User.create!(@user.attributes)
 	end
 end

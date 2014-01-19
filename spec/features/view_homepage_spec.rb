@@ -10,4 +10,6 @@ feature 'View the homepage' do
 		expect(page).to have_content 'Welcome to Taskitoff'
 	end
 
+	
+
 end
