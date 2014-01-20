@@ -4,6 +4,8 @@ describe Todo  do
 	it "should have a description" do
 		todo = Todo.new
 		expect(todo).to respond_to(:description)	
+		expect(todo).to respond_to(:name)	
+
 	end
 
 	describe "if a description is more than 20 characters" do
