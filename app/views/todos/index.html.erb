@@ -9,13 +9,9 @@
 	  <table class="table">
 	    <% @todos.each do |todo| %>
 	    <div class="row">
-	    	<%= todo.name %>
-	    	<div class="row">
-	    		<%= todo.description %>
-	    			<div class="row">
-	    				Posted: <%= time_ago_in_words(todo.created_at) %> ago
-	    			</div>
-	    	</div>
+	    	<tr><%= todo.name %></tr>
+    		<tr><%= todo.description %></tr>
+    		<tr>todo.created_at</tr>
 	    </div>
 	  </table>
 		<% end %>
