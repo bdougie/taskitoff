@@ -1,4 +1,17 @@
-<h1>Todos#index</h1>
-<% @todos.each do |todo| %>
-  <p><%= link_to todo.title, todo %></p>
-<% end %>
+<h1>Todos</h1>
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+  	My List
+  </div>
+	  <!-- Table -->
+	  <table class="table">
+	    <% @todos.each do |todo| %>
+	  </table>
+		<% end %>
+<br/>
+	<div class="pull-right" >
+	<%= link_to "Add a Task", new_todo_path, class: 'btn btn-primary btn-large' %>
+	</div>
+</div>
