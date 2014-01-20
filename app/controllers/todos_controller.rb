@@ -28,7 +28,7 @@ class TodosController < ApplicationController
   def destroy
     @todo = Todo.find(params[:id])
    if @topic.destroy
-      flash[:notice] = "\"#{description}\"[0..6] was deleted successfully."
+      flash[:notice] = "\"#{name}\" was deleted successfully."
       redirect_to topics_path
     else
       flash[:error] = "There was an error deleting the topic."

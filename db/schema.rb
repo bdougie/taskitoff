@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20140119120225) do
 
   create_table "todos", :force => true do |t|
     t.string "description"
+    t.string "name"
   end
 
   create_table "users", :force => true do |t|
