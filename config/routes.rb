@@ -6,6 +6,6 @@ Taskitoff::Application.routes.draw do
 
  resources :todos
 
-  root :to => 'pages#home' #rails wont except root 'pages#home'
+  root :to => 'todos#index' #rails wont except root 'pages#home'
   
 end

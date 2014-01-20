@@ -16,7 +16,7 @@
          	Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
               <i class="icon-share-alt"> </i>
-    <% end %>
+          <% end %>
           
 	      <% else %>
           <%= link_to "Sign In", new_user_session_path %> or 
