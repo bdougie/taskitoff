@@ -17,6 +17,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(params[:todo])
+    authorize! :create, Todo, message: "You need to be a member to create a new todo."
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
@@ -27,19 +28,20 @@ class TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find(params[:id])
+
    if @topic.destroy
       flash[:notice] = "\"#{name}\" was deleted successfully."
-      redirect_to topics_path
+      redirect_to todos_path
     else
       flash[:error] = "There was an error deleting the topic."
-      render :show
+      redirect_to todos_path
     end
   end
 
   def update
     @todo = Todo.find(params[:id])
     if @todo.update_attributes(params[:todo])
-      redirect_to @todo
+      redirect_to todos_path
     else
       flash[:error] = "Error saving topic. Please try again"
       render :edit

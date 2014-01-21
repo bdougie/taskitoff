@@ -1,27 +1,33 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div class="panel panel-primary">
+<div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">
   	My List
   </div>
 	  <!-- Table -->
-	  <table class="table">
+	  <table class="table table-striped table-bordered table-condensed">
 	  		<tr>
+		    	<th><%="#" %></th>
 	  			<th> Name </th>
 	  			<th> Description </th>
 	  			<th> Time Left </th>
+	  			<th>Completed?</th>
   			</tr> 
 	    <% @todos.each do |todo| %>
 	    	<tr>
+		    	<td><%= todo.id %></td>
 		    	<td><%= todo.name %></td>
 	    		<td><%= todo.description %></td>
 	    		<td><%= time_to_self_destruct(todo) %> left </td>
+	    		<td><%= link_to "Oh Yeah!", "#", class: "btn btn-warning" %></td>
+	    		<td><%= link_to "I can't do this, please remove", [todo], method: :destroy , class: "btn btn-danger" %></td>
+
 	    	</tr>
 			<% end %>
 	  </table>
 	<br/>
-	<div class="pull-right" >
+	<div class="pull-left" >
 	<%= link_to "Add a Task", new_todo_path, class: 'btn btn-primary btn-large' %>
 	</div>
 </div>

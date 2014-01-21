@@ -7,5 +7,7 @@ Taskitoff::Application.routes.draw do
  resources :todos
 
   root :to => 'todos#index' #rails wont except root 'pages#home'
+
+  get "no" => "pages#no"
   
 end
