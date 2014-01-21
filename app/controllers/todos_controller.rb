@@ -17,7 +17,6 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(params[:todo])
-    authorize! :create, Todo, message: "You need to be a member to create a new todo."
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else

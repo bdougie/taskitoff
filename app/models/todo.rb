@@ -5,6 +5,8 @@ class Todo < ActiveRecord::Base
 
 	validates :description, length: { maximum: 20 }
 
+	scope :visible_to, lambda { |user| user ? scoped : where(public: false) }
+
 	# scope :alive { where('') }
 
 end

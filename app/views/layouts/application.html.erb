@@ -10,7 +10,6 @@
 		<ul class="nav nav-tabs">
     <% if current_user %>
 			<li><%= link_to "Task Off", root_path %></li>
-      <li><%= link_to "Todos", todos_path %></li>
 		
 	    <div class="pull-right user-info">
          	Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -43,7 +42,7 @@
     <div class="alert">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <%= flash[:alert] %>
-        </div>
+    </div>
   <% end %>
 
 <%= yield %>
