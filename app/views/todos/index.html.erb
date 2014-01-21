@@ -21,13 +21,13 @@
 	    		<td><%= todo.description %></td>
 	    		<td><%= time_to_self_destruct(todo) %> left </td>
 	    		<td><%= link_to "Oh Yeah!", "#", class: "btn btn-warning" %></td>
-	    		<td><%= link_to "I can't do this, please remove", [todo], method: :destroy , class: "btn btn-danger" %></td>
+	    		<td><%= link_to "I can't do this, please remove", todo, method: :delete , class: "btn btn-danger" %></td>
 
 	    	</tr>
 			<% end %>
 	  </table>
 	<br/>
 	<div class="pull-left" >
-	<%= link_to "Add a Task", new_todo_path, class: 'btn btn-primary btn-large' %>
+		<%= link_to "Add a Task", new_todo_path, class: 'btn btn-primary btn-large' %>
 	</div>
 </div>
