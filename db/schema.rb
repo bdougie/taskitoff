@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(:version => 20140119120225) do
 
   create_table "todos", :force => true do |t|
-    t.string "description"
-    t.string "name"
+    t.string   "description"
+    t.string   "name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

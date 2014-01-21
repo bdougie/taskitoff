@@ -16,7 +16,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(params[:id])
+    @todo = Todo.new(params[:todo])
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
