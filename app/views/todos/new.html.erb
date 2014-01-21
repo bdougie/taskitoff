@@ -1,21 +1,25 @@
-<h1>New Todos</h1>
+<h1>Add a Task</h1>
 
 <%= form_for @todo do |f| %>
 
-	<%= f.label :name, class: 'control-label' %>
-  <div class="controls">
-	  <%= f.text_field :name %>
-	 </div>
-
-  <%= f.label :description, class: 'control-label' %>
-  <div class="controls">
-	  <%= f.text_field :description %>
-	 </div>
-
-  <div class="control-group">
-    <div class="controls">
-      <%= f.submit "Save", class: 'btn' %>
+  <form role="form">
+    <div class="form-group">
+      <%= f.label :name, class: 'control-label' %>
+      <div class="controls">
+    	  <%= f.text_field :name, placeholder: "Every task needs a name" %>
+    	</div>
     </div>
-  </div>
-
+    <div class="control-group">
+      <%= f.label :description, class: 'control-label' %>
+      <div class="controls">
+    	  <%= f.text_field :description, placeholder: "What do you want to accomplish?" %>
+  	  </div>
+    </div>
+    </br>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Save", class: 'btn-success' %>
+      </div>
+    </div>
+  </form>
 <% end %>
