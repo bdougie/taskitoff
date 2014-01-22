@@ -1,4 +1,6 @@
-<h1>Add a Task</h1>
+
+<%= link_to "Add a Task", '#', class: 'btn btn-success btn-large' %>
+
 
 <%= form_for todo do |f| %>
 
@@ -18,7 +20,7 @@
     </br>
     <div class="control-group">
       <div class="controls">
-        <%= f.submit "Save", class: 'btn-success' %>
+        <%= f.submit "Save", class: 'btn-primary' %>
       </div>
     </div>
   </form>
