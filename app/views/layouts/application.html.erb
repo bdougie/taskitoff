@@ -10,7 +10,6 @@
 		<ul class="nav nav-tabs">
     <% if current_user %>
 			<li><%= link_to "Task Off", root_path %></li>
-		
 	    <div class="pull-right user-info">
          	Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
@@ -29,18 +28,18 @@
 	</div>
 
 	<% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= flash[:notice] %>
     </div>
   <% elsif flash[:error] %>
-    <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="alert alert-error alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= flash[:error] %>
     </div>
   <% elsif flash[:alert] %>
-    <div class="alert">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="alert alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= flash[:alert] %>
     </div>
   <% end %>

@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-  	@todos = Todo.all
+  	@todos = current_user.todos
   end
 
   def show
@@ -17,6 +17,7 @@ class TodosController < ApplicationController
 
   def create
     @todo = Todo.new(params[:todo])
+    @todo.user = current_user
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
@@ -30,10 +31,10 @@ class TodosController < ApplicationController
     name = @todo.name
 
     if @todo.destroy
-      flash[:notice] = "\"#{name}\" was deleted successfully."
+      flash[:notice] = "\"#{name}\" was removed successfully."
       redirect_to todos_path
     else
-      flash[:error] = "There was an error deleting the topic."
+      flash[:error] = "There was an error removing the topic."
       redirect_to todos_path
     end
   end
