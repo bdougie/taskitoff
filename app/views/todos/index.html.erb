@@ -22,15 +22,15 @@
 			    	<td><%= todo.name %></td>
 		    		<td><%= todo.description %></td>
 		    		<td><%= time_to_self_destruct(todo) %> left </td>
-		    		<td><%= link_to "Oh Yeah! Got it done", todo, method: :delete , class: "btn btn-warning" %></td>
-		    		<td><%= link_to "I can't do this, please remove", todo, method: :delete , class: "btn btn-danger" %></td>
+		    		<td><%= link_to "Oh Yeah! Got it done", '#', method: :post , class: "btn btn-warning" %></td>
+		    		<td><%= link_to "I can't do this, please remove", todo, :confirm => 'Are you sure? You can do this!', method: :delete , class: "btn btn-danger" %></td>
 
 		    	</tr>
 				<% end %>
 		  </table>
 		<br/>
-		
-		<%= render partial: 'todos/form', locals: {todo: Todo.new} %>
-	
+		<div class="js-todos"> 
+			<%= render partial: 'todos/form', locals: {todo: Todo.new} %>
+		</div>
 	</div>
 <% end %>

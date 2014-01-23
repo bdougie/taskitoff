@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+   respond_to :html, :js
+
   def index
   	@todos = current_user.todos
   end
@@ -18,12 +20,18 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(params[:todo])
     @todo.user = current_user
+    @todo.completed = false
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
       flash[:error] = "Sorry bud, but there was an error. Please try again"
       render :new
     end
+
+    #respond_with(@todo) do |f|
+     # f.html 
+    #end
+
   end
 
   def destroy
@@ -40,8 +48,18 @@ class TodosController < ApplicationController
   end
 
   def update
-    @todos = current_user.todos
-    @todos = :completed, true  
-      
+    @todo = Todo.find(params[:id])
+    if @todo.update_attributes(params[:todo])
+      redirect_to todos_path
+    else
+      flash[:error] = "Error saving topic. Please try again"
+      render :edit
+    end    
   end
+
+  def completed
+    @todo = Todo.find(params[:id])
+    @todo.update_attribute(:completed, true)
+  end
+
 end

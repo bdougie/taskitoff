@@ -1,0 +1,5 @@
+<% if @todo.valid? %>
+  $(".js-comments").prepend("<%= escape_javascript(render(@todo)) %>");
+<% else %>
+  $(".js-new-todo").replaceWith("<%= escape_javascript(render partial: 'form', locals: { todo: @todo }) %>");
+<% end %>

@@ -11,7 +11,3 @@ Task app created from my my mind using TDD: RSpec and Capybara. This app will be
 * As a user, I want to be able to mark items on my to-do list as complete.
 * Items on a to-do list should automatically self-destruct after 7 days from their creation.
 
-
-create a boolean true || false. display whether completed is true or false
-
-add column called completed. 
