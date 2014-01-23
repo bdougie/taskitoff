@@ -40,12 +40,8 @@ class TodosController < ApplicationController
   end
 
   def update
-    @todo = Todo.find(params[:id])
-    if @todo.update_attributes(params[:todo])
-      redirect_to todos_path
-    else
-      flash[:error] = "Error saving topic. Please try again"
-      render :edit
-    end    
+    @todos = current_user.todos
+    @todos = :completed, true  
+      
   end
 end
