@@ -9,7 +9,7 @@
 	<div class="container">
 		<ul class="nav nav-tabs">
     <% if current_user %>
-			<li><%= link_to "Task Off", root_path %></li>
+			<li><%= link_to "Task Off", root_path, class: "navbar-brand" %></li>
 	    <div class="pull-right user-info">
          	Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
@@ -45,6 +45,8 @@
   <% end %>
 
 <%= yield %>
+
+<%= javascript_include_tag "application" %>
 
 </body>
 </html>
