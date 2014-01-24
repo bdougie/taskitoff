@@ -23,7 +23,7 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(params[:todo])
     @todo.user = current_user
-    @todo.complete = false
+    @todo.completed = false
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
