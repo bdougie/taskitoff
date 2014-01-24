@@ -2,7 +2,10 @@ class TodosController < ApplicationController
    respond_to :html, :js
 
   def index
-  	@todos = current_user.todos
+
+    if user_signed_in? 
+    	@todos = current_user.todos
+    end
   end
 
   def show
@@ -57,9 +60,8 @@ class TodosController < ApplicationController
     end    
   end
 
-  def completed
-    @todo = Todo.find(params[:id])
-    @todo.update_attribute(:completed, true)
+  def complete
+    Todo.find(params[:id]).update_attribute(:completed, true)
   end
 
 end
