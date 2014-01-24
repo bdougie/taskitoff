@@ -23,6 +23,7 @@ $(document).ready(function() {
       $(selector).slideUp();
     }
     else {
+      $(selector).removeClass('hide');
       $(selector).slideDown();
     }
     return false;
