@@ -10,7 +10,8 @@
 		<ul class="nav nav-tabs">
     <% if current_user %>
 			<li><%= link_to "Task Off", root_path, class: "navbar-brand" %></li>
-	    <div class="pull-right user-info">
+      <li><%= link_to "Completed Task", completed_path, class: "navbar-brand" %></li>
+      <div class="pull-right user-info">
          	Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
               <i class="icon-share-alt"> </i>

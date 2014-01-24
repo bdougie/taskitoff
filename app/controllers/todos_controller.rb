@@ -4,7 +4,7 @@ class TodosController < ApplicationController
   def index
 
     if user_signed_in? 
-    	@todos = current_user.todos(completed: :false)
+      @todos = current_user.todos.where(:completed => false)
     end
   end
 
@@ -27,7 +27,7 @@ class TodosController < ApplicationController
     if @todo.save
       redirect_to todos_path, notice: "Todo was saved successfully. Now get to work!"
     else
-      flash[:error] = "Sorry bud, but there was an error. Please try again"
+      flash[:error] = "Sorry bud, but there was an error. Please try using less words in your title"
       render :new
     end
 

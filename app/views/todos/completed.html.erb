@@ -1,1 +1,24 @@
-<%= @todo.completed = false %>
+	<div class="panel panel-primary">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">
+	  	Completed <%= current_user.todos.where(:completed => true ).count %> task within only 7 days.
+	  </div>
+		  <!-- Table -->
+		  <table class="table table-striped table-bordered table-condensed">
+				<p><% @todos = current_user.todos.where(:completed => true ) %></p>
+				<tr>
+				  	<th><%="#" %></th>
+						<th> Name </th>
+						<th> Description </th>
+						<th>Remove from completed list</th>
+				</tr> 
+				  <% @todos.each do |todo| %>
+				<tr>
+				  	<td><%= todo.id %></td>
+				  	<td><%= todo.name %></td>
+						<td><%= todo.description %></td>
+						<td><%= link_to "I don't like looking at this, please remove", todo, method: :delete , class: "btn btn-danger" %></td>
+				</tr>
+					<% end %>
+			</table>
+	</div>

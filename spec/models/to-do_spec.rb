@@ -21,9 +21,9 @@ describe Todo  do
 		expect(todo).to respond_to(:name)	
 	end
 
-	describe "if a name is more than 20 characters" do
+	describe "if a name is more than 25 characters" do
 		it "should not be a valid name" do 
-			todo = Todo.create(name: "#{'x'*21}")
+			todo = Todo.create(name: "#{'x'*26}")
 			expect(todo).should_not be_valid
 		end
 	end	

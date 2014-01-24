@@ -3,9 +3,7 @@ class Todo < ActiveRecord::Base
 
 	belongs_to :user
 
-	validates :name, length: { maximum: 20 }
-
-	scope :visible_to, lambda { |user| user ? scoped : where(public: false) }
+	validates :name, length: { maximum: 25 }
 
 	scope :alive, where( 'created_at > ?', Time.now - 7.days ) 
 
