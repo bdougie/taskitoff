@@ -4,7 +4,7 @@ class TodosController < ApplicationController
   def index
 
     if user_signed_in? 
-    	@todos = current_user.todos
+    	@todos = current_user.todos(completed: :false)
     end
   end
 
@@ -61,7 +61,9 @@ class TodosController < ApplicationController
   end
 
   def complete
-    Todo.find(params[:id]).update_attribute(:completed, true)
+    Todo.find(params[:todo_id]).update_attribute(:completed, true) 
+    redirect_to todos_path 
   end
+
 
 end

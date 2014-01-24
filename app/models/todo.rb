@@ -3,7 +3,7 @@ class Todo < ActiveRecord::Base
 
 	belongs_to :user
 
-	validates :description, length: { maximum: 20 }
+	validates :name, length: { maximum: 20 }
 
 	scope :visible_to, lambda { |user| user ? scoped : where(public: false) }
 

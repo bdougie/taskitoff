@@ -23,7 +23,7 @@
 		    		<td><%= todo.description %></td>
 		    		<td><%= time_to_self_destruct(todo) %> left </td>
 		    		
-		    		<td><%= link_to "Oh Yeah! Got it done", complete_todo_path(todo), method: post , class: "btn btn-warning" %></td>
+		    		<td><%= link_to "Oh Yeah! Got it done", todo_complete_path(todo), method: :post , class: "btn btn-warning" %></td>
 		    		
 		    		<td><%= link_to "I can't do this, please remove", todo, :confirm => 'Are you sure? You can do this!', method: :delete , class: "btn btn-danger" %></td>
 
