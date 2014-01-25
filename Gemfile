@@ -33,4 +33,5 @@ gem 'redcarpet'
 gem 'faker'
 gem 'devise'
 gem 'cancan'
+gem 'omniauth-facebook'
 
