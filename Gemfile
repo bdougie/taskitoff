@@ -34,4 +34,6 @@ gem 'faker'
 gem 'devise'
 gem 'cancan'
 gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'mini_magick'
 
