@@ -8,7 +8,7 @@ Taskitoff::Application.routes.draw do
 	 
 	 end
 
-  root :to => 'todos#index' #rails wont except root 'pages#home'
+  root :to => 'todos#index' 
 
   match 'completed' => 'todos#completed'
   

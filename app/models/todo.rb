@@ -10,6 +10,3 @@ class Todo < ActiveRecord::Base
 end
 
 
- #def index
- 	#@todos = Todo.alive
- #end
